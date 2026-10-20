@@ -1,0 +1,254 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9edf5;
+    color: #3f081d;
+    padding: 30px 15px;
+    line-height: 1.6;
+}
+
+.curriculo {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(30, 45, 75, 0.12);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background: linear-gradient(135deg, #4a1524, #4e031b);
+    color: white;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cabecalho h1 {
+    font-size: 38px;
+    margin-bottom: 5px;
+}   
+
+.cabecalho h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #d7e9f5;
+}
+
+/* Seções */
+.secao {
+    padding: 23px 38px;
+    border-bottom: 1px solid #e8edf3;
+}
+
+.secao h3,
+.contato h3 {
+    color: #58021c;
+    font-size: 18px;
+    margin-bottom: 13px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #dceaf1;
+}
+
+.secao h3 i,
+.contato h3 i {
+    margin-right: 8px;
+}
+
+.secao p {
+    font-size: 14px;
+    color: #6f0128;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.item h4 {
+    font-size: 15px;
+    color: #66023cd9;
+}
+
+.detalhe {
+    color: #8d044a !important;
+    font-size: 13px !important;
+    margin: 3px 0;
+}
+
+/* Habilidades */
+.habilidades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 25px;
+    list-style: none;
+}
+
+.habilidades li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #890440;
+}
+
+.habilidades li::before {
+    content: "✓";
+    color: #770447;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.secao ul:not(.habilidades) {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #ab115e;
+}
+
+/* Contato */
+.contato {
+    background: #f5f8fb;
+    padding: 25px 38px;
+}
+
+.contato p {
+    font-size: 14px;
+    margin: 7px 0;
+    color: #9f073c;
+}
+
+.contato p i {
+    width: 22px;
+    color: #940250;
+}
+
+.contato a {
+    color: #6f094a;
+    text-decoration: none;
+}
+
+/* Botão de impressão */
+.imprimir {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 22px;
+    background: #cf0358;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.imprimir:hover {
+    background: #590332;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .curriculo {
+        border-radius: 0;
+    }
+
+    .cabecalho {
+        padding: 28px 22px;
+    }
+
+    .cabecalho h1 {
+        font-size: 30px;
+    }
+
+    .cabecalho h2 {
+        font-size: 13px;
+    }
+
+    .foto {
+        width: 65px;
+        height: 65px;
+        font-size: 27px;
+    }
+
+    .secao,
+    .contato {
+        padding: 22px;
+    }
+
+    .habilidades {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Impressão e PDF */
+@media print {
+    body {
+        padding: 0;
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .curriculo {
+        max-width: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .imprimir {
+        display: none;
+    }
+
+    .secao,
+    .contato,
+    .cabecalho {
+        break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* Tamanho da foto do currículo */
+.cabecalho .foto {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px;
+    max-width: 80px;
+    flex: 0 0 80px;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.cabecalho .foto img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Foto menor em celulares */
+@media (max-width: 600px) {
+    .cabecalho .foto {
+        width: 65px !important;
+        height: 65px !important;
+        flex-basis: 65px;
+    }
+}
+
